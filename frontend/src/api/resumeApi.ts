@@ -105,3 +105,25 @@ export const tailorResume = async (
 
   return response.data;
 };
+export interface InterviewRequest {
+  resumeText: string;
+  jobDescription: string;
+}
+
+export interface InterviewResponse {
+  technicalQuestions: string[];
+  behavioralQuestions: string[];
+  hrQuestions: string[];
+}
+
+export const generateInterviewQuestions = async (
+  request: InterviewRequest
+): Promise<InterviewResponse> => {
+
+  const response = await API.post<InterviewResponse>(
+    "/interview/generate",
+    request
+  );
+
+  return response.data;
+};

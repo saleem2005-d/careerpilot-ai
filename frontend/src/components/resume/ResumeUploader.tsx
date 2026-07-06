@@ -153,6 +153,13 @@ function ResumeUploader() {
     </button>
   </Link>
 </div>
+<div style={{ marginBottom: "20px" }}>
+  <Link to="/interview">
+    <button className="upload-button">
+      Go to AI Interview Generator
+    </button>
+  </Link>
+</div>
             <div
               style={{
                 width: "100%",
