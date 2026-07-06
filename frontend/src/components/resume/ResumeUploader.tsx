@@ -167,6 +167,13 @@ function ResumeUploader() {
     </button>
   </Link>
 </div>
+<div style={{ marginBottom: "20px" }}>
+  <Link to="/career-roadmap">
+    <button className="upload-button">
+      Go to AI Career Roadmap
+    </button>
+  </Link>
+</div>
             <div
               style={{
                 width: "100%",

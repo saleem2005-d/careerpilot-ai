@@ -147,3 +147,24 @@ export const generateCoverLetter = async (
 
   return response.data;
 };
+export interface CareerRoadmapRequest {
+  currentSkills: string;
+  targetRole: string;
+  experienceLevel: string;
+}
+
+export interface CareerRoadmapResponse {
+  roadmap: string;
+}
+
+export const generateCareerRoadmap = async (
+  request: CareerRoadmapRequest
+): Promise<CareerRoadmapResponse> => {
+
+  const response = await API.post<CareerRoadmapResponse>(
+    "/career-roadmap/generate",
+    request
+  );
+
+  return response.data;
+};

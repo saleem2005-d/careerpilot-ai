@@ -5,6 +5,7 @@ import JobMatcher from "./pages/JobMatcher";
 import ResumeTailor from "./pages/ResumeTailor";
 import InterviewGenerator from "./pages/InterviewGenerator";
 import CoverLetterGenerator from "./pages/CoverLetterGenerator";
+import CareerRoadmap from "./pages/CareerRoadmap";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
 /><Route
   path="/cover-letter"
   element={<CoverLetterGenerator />}
+/><Route
+  path="/career-roadmap"
+  element={<CareerRoadmap />}
 />
       </Routes>
     </BrowserRouter>
