@@ -4,6 +4,7 @@ import ResumeUploader from "./components/resume/ResumeUploader";
 import JobMatcher from "./pages/JobMatcher";
 import ResumeTailor from "./pages/ResumeTailor";
 import InterviewGenerator from "./pages/InterviewGenerator";
+import CoverLetterGenerator from "./pages/CoverLetterGenerator";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         <Route
   path="/interview"
   element={<InterviewGenerator />}
+/><Route
+  path="/cover-letter"
+  element={<CoverLetterGenerator />}
 />
       </Routes>
     </BrowserRouter>

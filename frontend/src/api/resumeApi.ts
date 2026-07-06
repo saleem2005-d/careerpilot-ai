@@ -127,3 +127,23 @@ export const generateInterviewQuestions = async (
 
   return response.data;
 };
+export interface CoverLetterRequest {
+  resumeText: string;
+  jobDescription: string;
+}
+
+export interface CoverLetterResponse {
+  coverLetter: string;
+}
+
+export const generateCoverLetter = async (
+  request: CoverLetterRequest
+): Promise<CoverLetterResponse> => {
+
+  const response = await API.post<CoverLetterResponse>(
+    "/cover-letter/generate",
+    request
+  );
+
+  return response.data;
+};

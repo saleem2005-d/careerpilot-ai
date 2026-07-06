@@ -160,6 +160,13 @@ function ResumeUploader() {
     </button>
   </Link>
 </div>
+<div style={{ marginBottom: "20px" }}>
+  <Link to="/cover-letter">
+    <button className="upload-button">
+      Go to AI Cover Letter Generator
+    </button>
+  </Link>
+</div>
             <div
               style={{
                 width: "100%",
