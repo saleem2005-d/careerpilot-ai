@@ -145,7 +145,14 @@ function ResumeUploader() {
             >
               {result.analysis.score.overallScore}/100
             </div>
-
+          
+<div style={{ marginBottom: "20px" }}>
+  <Link to="/resume-tailor">
+    <button className="upload-button">
+      Go to AI Resume Tailoring
+    </button>
+  </Link>
+</div>
             <div
               style={{
                 width: "100%",

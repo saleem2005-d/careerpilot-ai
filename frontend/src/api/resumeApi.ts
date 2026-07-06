@@ -40,9 +40,31 @@ export interface UploadResponse {
   analysis: ResumeAnalysis;
 }
 
+export interface JobMatchRequest {
+  resumeText: string;
+  jobDescription: string;
+}
+
+export interface JobMatchResponse {
+  matchScore: number;
+  matchedSkills: string[];
+  missingSkills: string[];
+  suggestions: string[];
+}
+
+export interface ResumeTailorRequest {
+  resumeText: string;
+  jobDescription: string;
+}
+
+export interface ResumeTailorResponse {
+  tailoredResume: string;
+}
+
 export const uploadResume = async (
   file: File
 ): Promise<UploadResponse> => {
+
   const formData = new FormData();
 
   formData.append("file", file);
@@ -60,27 +82,24 @@ export const uploadResume = async (
   return response.data;
 };
 
-// ===============================
-// Job Match Interfaces
-// ===============================
-
-export interface JobMatchRequest {
-  resumeText: string;
-  jobDescription: string;
-}
-
-export interface JobMatchResponse {
-  matchScore: number;
-  matchedSkills: string[];
-  missingSkills: string[];
-  suggestions: string[];
-}
-
 export const matchResume = async (
   request: JobMatchRequest
 ): Promise<JobMatchResponse> => {
+
   const response = await API.post<JobMatchResponse>(
     "/job/match",
+    request
+  );
+
+  return response.data;
+};
+
+export const tailorResume = async (
+  request: ResumeTailorRequest
+): Promise<ResumeTailorResponse> => {
+
+  const response = await API.post<ResumeTailorResponse>(
+    "/resume/tailor",
     request
   );
 
